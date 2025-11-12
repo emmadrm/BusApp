@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import "../Vacuum.css";
 import { Bot } from "lucide-react";
-
+import { ToastContainer, toast } from "react-toastify";
+import broom from "../assets/broom.png";
 const TRASH_TYPES = [
   { name: "jewelry", color: "#d4af37", size: 8 },
   { name: "passport", color: "#4a4e69", size: 10 },
@@ -13,10 +14,10 @@ const TRASH_TYPES = [
 export default function Vacuum() {
   const [trashItems, setTrashItems] = useState([]);
   const [cleanedAreas, setCleanedAreas] = useState([]);
-  const [modalData, setModalData] = useState(null); // holds x, y of click
+  const [modalData, setModalData] = useState(null);
   const [cleanType, setCleanType] = useState("Quick");
   const [cleanTime, setCleanTime] = useState(5);
-  const [robotPos, setRobotPos] = useState({ x: 160, y: 620 }); // starting at back of bus
+  const [robotPos, setRobotPos] = useState({ x: 160, y: 620 });
   const [moving, setMoving] = useState(false);
 
   useEffect(() => {
@@ -33,15 +34,12 @@ export default function Vacuum() {
   }, []);
 
   const handleClick = (e) => {
-    // Get the SVG element
     const svg = e.currentTarget;
     const rect = svg.getBoundingClientRect();
 
-    // Calculate coordinates relative to SVG viewBox
     const x = ((e.clientX - rect.left) / rect.width) * 320;
     const y = ((e.clientY - rect.top) / rect.height) * 640;
 
-    // Open modal with clicked coordinates
     setModalData({ x, y });
   };
 
@@ -65,22 +63,39 @@ export default function Vacuum() {
       if (step >= steps) {
         clearInterval(interval);
 
-        // Robot reached target, simulate cleaning delay
         const delaySeconds = cleanTime === 10 ? 1 : cleanTime === 20 ? 3 : 5;
 
         setTimeout(() => {
-          // After cleaning
+          setTrashItems((prev) => {
+            const removed = prev.filter(
+              (t) => Math.hypot(t.x - targetX, t.y - targetY) <= 30
+            );
+
+            const remaining = prev.filter(
+              (t) => Math.hypot(t.x - targetX, t.y - targetY) > 30
+            );
+
+            const lostValuables = removed.filter((t) =>
+              ["jewelry", "passport", "idCard"].includes(t.name)
+            );
+
+            if (lostValuables.length > 0) {
+              toast.error(
+                `⚠️ Alert: Βρεθηκε χαμενο αντικειμενο αξιας απο επιβατη: (${lostValuables
+                  .map((t) => t.name)
+                  .join(", ")}).`,
+                { position: "top-right", autoClose: 5000 }
+              );
+            }
+
+            return remaining;
+          });
+
           setCleanedAreas((prev) => [
             ...prev,
             { x: targetX, y: targetY, id: Math.random() },
           ]);
 
-          // Remove nearby trash
-          setTrashItems((prev) =>
-            prev.filter((t) => Math.hypot(t.x - targetX, t.y - targetY) > 30)
-          );
-
-          // Move robot back to start
           setRobotPos({ x: 160, y: 620 });
           setMoving(false);
         }, delaySeconds * 1000);
@@ -91,11 +106,25 @@ export default function Vacuum() {
   return (
     <div className="vacuum-page">
       <div className="container">
-        <h1>🚌 Bus Cleaning Control</h1>
+        <h1 className="title">
+          <img
+            src={broom}
+            alt="Bus icon"
+            style={{
+              width: "39px",
+              height: "39px",
+              marginRight: "8px",
+              verticalAlign: "middle",
+            }}
+          />
+          Bus Cleaning Control
+        </h1>
+
         <p>
           Click any dirty area in the bus to send the robot vacuum to clean that
           area.
         </p>
+        <p className="pal">If something of value is found you get an alert.</p>
         <div className="bus-wrapper">
           <svg
             className="bus"
@@ -247,6 +276,7 @@ export default function Vacuum() {
           </div>
         )}
       </div>
+      <ToastContainer />
     </div>
   );
 }
