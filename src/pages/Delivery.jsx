@@ -13,9 +13,7 @@ function Delivery() {
             <Store name="Grigoris" logo={grigorisImg} category="Coffee & snacks" time="Delivery time: 10-15 min" offer="Free delivery for orders over $15" />
             <Store name="Everest" logo={everestImg} category="Cofee & sandwiches" time="Delivery time: 20-30 min" offer="1 + 1 Coffee of your choice" />
             <Store name="Mikel" logo={mikelImg} category="Specialty Coffees" time="Delivery time: 15-25 min" offer="Free delivery for orders over $10" />
-            <Store name="McDonalds" logo={mcdonaldsImg} category="Burgers & Fries" time="Delivery time: 30-40 min" offer="2 Burgers only for 3$ " />
-            <Store name="I Love Souvlaki" logo={ilovesouvlakiImg} category="Greek Souvlaki" time="Delivery time: 20-30 min" offer="Free delivery for orders over $20" />
-            <Store name="Goody's" logo={goodysImg} category="Burgers & Nuggets" time="Delivery time: 25-35 min" offer="1 Free Drink with every Burger" />
+        
         </div>
     );
 }

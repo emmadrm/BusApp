@@ -5,7 +5,7 @@ function Store(props) {
         <div>
             <div className="store_list">
                 <div className="store-card" >  
-                    <a href="/" className="store-item"> /* Link gia magazi */
+                    <a href="/" className="store-item"> 
                         <img className="logo" src={props.logo} alt={`${props.name} logo`} loading="lazy" />
                         <h4>{props.name}</h4>
                         <p>{props.category}</p>
