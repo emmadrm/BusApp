@@ -40,7 +40,7 @@ function Header() {
                 View
               </Link>
             </li>
-          </ul>
+          </ul> 
         </header>
       </div>
     </div>
