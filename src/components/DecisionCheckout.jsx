@@ -7,6 +7,8 @@ function DecisionCheckout(props) {
   const state = location.state || {};
   const cart = state.Cart;
   const totalPrice = Number(state.TotalPrice) || 0;
+  const storeName = state.StoreName;
+  console.log(storeName);
   console.log(totalPrice);
 
   const goToCheckout2 = () => {
@@ -14,7 +16,7 @@ function DecisionCheckout(props) {
   };
 
   const goToCheckout3 = () => {
-    navigate("/map");
+    navigate("/map", { state });
   };
 
   return (

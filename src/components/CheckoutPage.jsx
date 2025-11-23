@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import convertToSub from "../lib/convertToSub";
 import { useNavigate } from "react-router-dom";
 
-const CheckoutPage = ({ amount }) => {
+const CheckoutPage = ({ amount, storeName }) => {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -26,9 +26,11 @@ const CheckoutPage = ({ amount }) => {
 
     const { error } = await stripe.confirmPayment({
       elements,
-      clientSecret,
+
       confirmParams: {
-        return_url: `${window.location.origin}/completion`,
+        return_url: `${
+          window.location.origin
+        }/completion?storeName=${encodeURIComponent(storeName)}`,
       },
     });
 
@@ -39,10 +41,6 @@ const CheckoutPage = ({ amount }) => {
     }
   };
 
-  const handleSubmit2 = () => {
-    navigate("/completion");
-  };
-
   return (
     <form onSubmit={handleSubmit} className="payment-form">
       <>
@@ -50,7 +48,7 @@ const CheckoutPage = ({ amount }) => {
         <button
           disabled={loading || !stripe}
           className="payment-btn"
-          onClick={handleSubmit2}
+          type="submit"
         >
           <span>{!loading ? `Pay: ${amount}€ ` : "Processing..."}</span>
         </button>
