@@ -10,7 +10,9 @@ function Checkout(props) {
   const location = useLocation();
   const state = location.state || {};
   const cart = state.Cart;
+  const storeName = state.StoreName;
   const totalPrice = Number(state.TotalPrice) || 0;
+
   console.log(totalPrice);
 
   const [stripePromise, setStripePromise] = useState(null);
@@ -39,7 +41,7 @@ function Checkout(props) {
     <>
       {clientSecret && stripePromise && (
         <Elements stripe={stripePromise} options={{ clientSecret }}>
-          <CheckoutPage amount={totalPrice} />
+          <CheckoutPage amount={totalPrice} storeName={storeName} />
         </Elements>
       )}
     </>

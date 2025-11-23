@@ -1,8 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 function PaymentSuccess() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const storeName = searchParams.get("storeName");
+  console.log(storeName);
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
       <div
@@ -24,7 +27,7 @@ function PaymentSuccess() {
             borderRadius: "12px",
             border: "2px solid #ddd",
           }}
-          onClick={() => navigate("/map")}
+          onClick={() => navigate("/map", { state: { StoreName: storeName } })}
         >
           Ωρα και σημειο παραλαβης
         </button>
