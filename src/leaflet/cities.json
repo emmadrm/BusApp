@@ -1,0 +1,112 @@
+[
+  {
+    "city": "Athens",
+    "admin": "Attica",
+    "country": "Greece",
+    "population_proper": "3153000",
+    "iso2": "GR",
+    "capital": "primary",
+    "lat": "37.9838",
+    "lng": "23.7275",
+    "population": "3153000"
+  },
+  {
+    "city": "Thessaloniki",
+    "admin": "Central Macedonia",
+    "country": "Greece",
+    "population_proper": "812000",
+    "iso2": "GR",
+    "capital": "admin",
+    "lat": "40.6401",
+    "lng": "22.9444",
+    "population": "812000"
+  },
+  {
+    "city": "Patras",
+    "admin": "Western Greece",
+    "country": "Greece",
+    "population_proper": "213984",
+    "iso2": "GR",
+    "capital": "admin",
+    "lat": "38.2466",
+    "lng": "21.7346",
+    "population": "213984"
+  },
+  {
+    "city": "Larissa",
+    "admin": "Thessaly",
+    "country": "Greece",
+    "population_proper": "144651",
+    "iso2": "GR",
+    "capital": "admin",
+    "lat": "39.6380",
+    "lng": "22.4190",
+    "population": "144651"
+  },
+  {
+    "city": "Volos",
+    "admin": "Thessaly",
+    "country": "Greece",
+    "population_proper": "144449",
+    "iso2": "GR",
+    "capital": "admin",
+    "lat": "39.3619",
+    "lng": "22.9420",
+    "population": "144449"
+  },
+  {
+    "city": "Trikala",
+    "admin": "Thessaly",
+    "country": "Greece",
+    "population_proper": "81300",
+    "iso2": "GR",
+    "capital": "admin",
+    "lat": "39.5556",
+    "lng": "21.7672",
+    "population": "81300"
+  },
+  {
+    "city": "Kalamata",
+    "admin": "Peloponnese",
+    "country": "Greece",
+    "population_proper": "68800",
+    "iso2": "GR",
+    "capital": "admin",
+    "lat": "37.0386",
+    "lng": "22.1142",
+    "population": "68800"
+  },
+  {
+    "city": "Preveza",
+    "admin": "Epirus",
+    "country": "Greece",
+    "population_proper": "24800",
+    "iso2": "GR",
+    "capital": "admin",
+    "lat": "38.9500",
+    "lng": "20.7500",
+    "population": "24800"
+  },
+  {
+    "city": "Korinthos",
+    "admin": "Peloponnese",
+    "country": "Greece",
+    "population_proper": "30500",
+    "iso2": "GR",
+    "capital": "admin",
+    "lat": "37.9370",
+    "lng": "22.9000",
+    "population": "30500"
+  },
+  {
+    "city": "Tripolis",
+    "admin": "Peloponnese",
+    "country": "Greece",
+    "population_proper": "28500",
+    "iso2": "GR",
+    "capital": "admin",
+    "lat": "37.5089",
+    "lng": "22.3792",
+    "population": "28500"
+  }
+]
