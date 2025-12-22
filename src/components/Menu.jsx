@@ -36,7 +36,8 @@ function Menu(props) {
 
   const CheckoutState = {
     Cart: cartItems,
-    TotalPrice: itemsPrice.toFixed(2),
+    TotalPrice: itemsPrice,
+    StoreName: storeName,
   };
 
   return (
