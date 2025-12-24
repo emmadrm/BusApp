@@ -16,6 +16,9 @@ import DecisionCheckout from "./components/DecisionCheckout";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import Map from "./components/Map";
 
+import ControlCentre from "./pages/ControlCentre";
+import Driving from "./pages/Driving";
+
 function App() {
   return (
     <div>
@@ -33,6 +36,8 @@ function App() {
           <Route path="/checkout2" element={<Checkout />} />
           <Route path="/completion" element={<PaymentSuccess />} />
           <Route path="/map" element={<Map />} />
+          <Route path="/control-centre" element={<ControlCentre />} />
+          <Route path="/driving" element={<Driving />} />
         </Routes>
         {/* <Footer /> */}
       </Router>
