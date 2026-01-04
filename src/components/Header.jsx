@@ -26,26 +26,20 @@ function Header() {
           </a>
           <ul className="nav nav-pills">
             <li className="nav-item mx-2">
-              <Link to="/control-centre" className="nav-link fw-bold text-white">
-                Control Centre 
+              <Link
+                to="/control-centre"
+                className="nav-link fw-bold text-white"
+              >
+                Control Centre
               </Link>
             </li>
-            <li className="nav-item mx-2">
-              <Link to="/driving" className="nav-link fw-bold text-white">
-                Driving
-              </Link>
-            </li>
+
             <li className="nav-item mx-2">
               <Link to="/vacuum" className="nav-link fw-bold text-white">
                 Vacuum
               </Link>
             </li>
-            <li className="nav-item mx-2">
-              <Link to="/view" className="nav-link nav fw-bold text-white">
-                View
-              </Link>
-            </li>
-          </ul> 
+          </ul>
         </header>
       </div>
     </div>

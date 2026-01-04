@@ -1,0 +1,77 @@
+[
+  {
+    "city": "Athens",
+    "lat": 37.9838,
+    "lng": 23.7275,
+    "landscapes": [
+      { "name": "Acropolis", "lat": 37.9715, "lng": 23.725 },
+      { "name": "National Garden", "lat": 37.975, "lng": 23.736 },
+      { "name": "Plaka Hill", "lat": 37.9758, "lng": 23.729 }
+    ],
+    "restaurants": [
+      { "name": "Taverna Ouzeri", "lat": 37.982, "lng": 23.728 },
+      { "name": "Kafenio Zorba", "lat": 37.9845, "lng": 23.732 },
+      { "name": "Athens Bites", "lat": 37.981, "lng": 23.734 }
+    ]
+  },
+  {
+    "city": "Thessaloniki",
+    "lat": 40.6401,
+    "lng": 22.9444,
+    "landscapes": [
+      { "name": "White Tower", "lat": 40.6395, "lng": 22.944 },
+      { "name": "Aristotelous Square", "lat": 40.632, "lng": 22.945 },
+      { "name": "Ano Poli", "lat": 40.648, "lng": 22.9455 }
+    ],
+    "restaurants": [
+      { "name": "Taverna Nikos", "lat": 40.641, "lng": 22.945 },
+      { "name": "Souvlaki Mania", "lat": 40.642, "lng": 22.9425 },
+      { "name": "Balkan Bistro", "lat": 40.639, "lng": 22.946 }
+    ]
+  },
+  {
+    "city": "Patras",
+    "lat": 38.2466,
+    "lng": 21.7346,
+    "landscapes": [
+      { "name": "Rio Bridge View", "lat": 38.245, "lng": 21.735 },
+      { "name": "Patras Castle", "lat": 38.248, "lng": 21.732 },
+      { "name": "Georgiou Square", "lat": 38.246, "lng": 21.736 }
+    ],
+    "restaurants": [
+      { "name": "Patras Grill", "lat": 38.247, "lng": 21.734 },
+      { "name": "Mediterraneo Taverna", "lat": 38.2455, "lng": 21.737 },
+      { "name": "Baklava House", "lat": 38.2465, "lng": 21.733 }
+    ]
+  },
+  {
+    "city": "Larissa",
+    "lat": 39.638,
+    "lng": 22.419,
+    "landscapes": [
+      { "name": "Larissa Castle Ruins", "lat": 39.639, "lng": 22.4175 },
+      { "name": "Pefkakia Park", "lat": 39.637, "lng": 22.42 },
+      { "name": "Platia K. Karamanli", "lat": 39.6385, "lng": 22.4215 }
+    ],
+    "restaurants": [
+      { "name": "Taverna Stou Gerou", "lat": 39.6385, "lng": 22.418 },
+      { "name": "Larissa Souvlaki", "lat": 39.6375, "lng": 22.4205 },
+      { "name": "Ouzeri tou Nikou", "lat": 39.639, "lng": 22.421 }
+    ]
+  },
+  {
+    "city": "Volos",
+    "lat": 39.3619,
+    "lng": 22.942,
+    "landscapes": [
+      { "name": "Pelion Viewpoint", "lat": 39.363, "lng": 22.944 },
+      { "name": "Volos Waterfront", "lat": 39.361, "lng": 22.94 },
+      { "name": "Dimotiko Park", "lat": 39.3625, "lng": 22.943 }
+    ],
+    "restaurants": [
+      { "name": "Tsipouradiko Volou", "lat": 39.3615, "lng": 22.9415 },
+      { "name": "Seafood by the Port", "lat": 39.362, "lng": 22.9425 },
+      { "name": "Pelion Taverna", "lat": 39.3635, "lng": 22.9445 }
+    ]
+  }
+]
