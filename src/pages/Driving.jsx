@@ -18,7 +18,7 @@ function Driving() {
             return prevSpeed + 1;
           } else {
             setIsIncreasing(false);
-            setTargetSpeed(Math.floor(Math.random() * 30)); // New target 0-29
+            setTargetSpeed(Math.floor(Math.random() * 30)); // ταχυτητα 0-29
             return prevSpeed;
           }
         } else {
@@ -26,7 +26,7 @@ function Driving() {
             return prevSpeed - 1;
           } else {
             setIsIncreasing(true);
-            setTargetSpeed(Math.floor(40 + Math.random() * 40)); // New target 40-80
+            setTargetSpeed(Math.floor(40 + Math.random() * 40)); // ταχυτητα 40-80
             return prevSpeed;
           }
         }

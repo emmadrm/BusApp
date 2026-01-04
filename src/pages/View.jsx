@@ -1,8 +1,8 @@
-//import React, { useRef, useEffect, useState } from "react";
-//import "aframe";
-//import RoofVideo from '../assets/videos/roof-360.mp4';
-//import DriverVideo from '../assets/videos/Driver.mp4';
-/*
+import React, { useRef, useEffect, useState } from "react";
+import "aframe";
+import RoofVideo from '../assets/videos/bus-360.mp4';
+import DriverVideo from '../assets/videos/Driver.mp4';
+
 function View(){
     const videoRef = useRef(null);
     const [currentVideo, setCurrentVideo] = useState('roof');
@@ -63,4 +63,4 @@ function View(){
 }
 
 export default View;
-*/
+

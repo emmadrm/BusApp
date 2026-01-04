@@ -158,60 +158,87 @@ function ControlCentre() {
   };
 
   return (
-    <div className="control-centre">
-      {error && <p>Error: {error}</p>}
+  <div className="control-centre-page">
+    <div className="control-card">
+      {error && <p className="error-text">Error: {error}</p>}
+
       {!error && (
         <>
-          <h2>
-            <b>Control Centre</b>
-          </h2>
+          <h2 className="control-title">Control Centre</h2>
+
           <h1
-            className={` ${
+            className={`temperature ${
               termperature < 15 ? "cold" : termperature > 25 ? "hot" : "normal"
             }`}
           >
             {termperature || "Loading..."}°C
           </h1>
-          <h3 className="region">📍 {region || "Loading location..."}</h3>
-          <div className="AC">
+
+          <p className="region">📍 {region || "Loading location..."}</p>
+
+          <div className="climate-controls">
             <button
-              className={`btn ${
-                control === "cooling" ? "btn-primary" : "btn-light"
-              } me-2`}
+              className={`climate-btn ${
+                control === "cooling" ? "active-cooling" : ""
+              }`}
               onClick={() => handleChange("cooling")}
             >
               ❄️ Cooling
             </button>
+
             <button
-              className={`btn ${
-                control === "heating" ? "btn-danger" : "btn-light"
-              } me-2`}
+              className={`climate-btn ${
+                control === "heating" ? "active-heating" : ""
+              }`}
               onClick={() => handleChange("heating")}
             >
               🔥 Heating
             </button>
-            <p>Panels producing: {solarPower} W</p>
-            <p>Battery stored: {storedEnergy.toFixed(2)} Wh</p>
-            <p>Bus consuming: {consumptionRate} W</p>
-            <p>Total energy saved: {totalEnergySaved.toFixed(2)} Wh</p>
           </div>
-          <div className="mt-4 p-2 border rounded-lg w-fit">
+
+          <div className="stats-grid">
+            <div className="stat">
+              <span>Panels producing</span>
+              <b>{solarPower} W</b>
+            </div>
+
+            <div className="stat">
+              <span>Battery stored</span>
+              <b>{storedEnergy.toFixed(2)} Wh</b>
+            </div>
+
+            <div className="stat">
+              <span>Bus consuming</span>
+              <b>{consumptionRate} W</b>
+            </div>
+
+            <div className="stat">
+              <span>Total energy saved</span>
+              <b>{totalEnergySaved.toFixed(2)} Wh</b>
+            </div>
+          </div>
+
+          <div className="info-box">
             <p>
               <b>Weather condition:</b>{" "}
               {weatherCode !== null
                 ? getWeatherCondition(weatherCode)
                 : "Loading..."}
             </p>
+
             <p>
               <b>Ceiling (roof) status:</b>{" "}
               {roof === "open"
-                ? "Roof working — solar panels active "
-                : "Roof deactivated— panels limited/no production"}
+                ? "Roof working — solar panels active"
+                : "Roof deactivated — panels limited"}
             </p>
           </div>
         </>
       )}
     </div>
+  </div>
+
+
   );
 }
 export default ControlCentre;
