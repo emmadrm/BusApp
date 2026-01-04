@@ -3,24 +3,20 @@ import cors from "cors";
 import dotenv from "dotenv";
 import Stripe from "stripe";
 
-// Load .env.local
 dotenv.config({ path: "./.env.local" });
 
-// Initialize Stripe (secret key)
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Send publishable key to frontend
 app.get("/config", (req, res) => {
   res.send({
     publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
   });
 });
 
-// Create PaymentIntent
 app.post("/create-payment-intent", async (req, res) => {
   try {
     const { amount } = req.body;
@@ -38,5 +34,4 @@ app.post("/create-payment-intent", async (req, res) => {
   }
 });
 
-// Start server
 app.listen(3000, () => console.log("Server running on port 3000"));

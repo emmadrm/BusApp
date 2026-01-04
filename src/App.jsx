@@ -8,7 +8,7 @@ import Vacuum from "./pages/Vacuum";
 import Delivery from "./pages/Delivery";
 import Information from "./pages/Information";
 import Navigator from "./pages/Navigator";
-import View from "./pages/View";
+
 import Menu from "./components/Menu";
 import Checkout from "./components/Checkout";
 
@@ -17,7 +17,6 @@ import PaymentSuccess from "./pages/PaymentSuccess";
 import Map from "./components/Map";
 
 import ControlCentre from "./pages/ControlCentre";
-import Driving from "./pages/Driving";
 
 function App() {
   return (
@@ -27,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/vacuum" element={<Vacuum />} />
-          <Route path="/view" element={<View />} />
+
           <Route path="/delivery" element={<Delivery />} />
           <Route path="/info" element={<Information />} />
           <Route path="/gps" element={<Navigator />} />
@@ -37,7 +36,6 @@ function App() {
           <Route path="/completion" element={<PaymentSuccess />} />
           <Route path="/map" element={<Map />} />
           <Route path="/control-centre" element={<ControlCentre />} />
-          <Route path="/driving" element={<Driving />} />
         </Routes>
         {/* <Footer /> */}
       </Router>

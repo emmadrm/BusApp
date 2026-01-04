@@ -1,7 +1,8 @@
 import React from "react";
+import TouristGPSMap from "../components/Map2";
 
 function Navigator() {
-    return ( <h1> οταν βγαινει απ το λεωφ για να μη χανεται ο μπρο</h1>);
+  return <TouristGPSMap />;
 }
 
 export default Navigator;
